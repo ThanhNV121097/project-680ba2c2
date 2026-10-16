@@ -45,6 +45,18 @@ export default function App() {
                 <T k={`nav.links.${i}.label`} />
               </Link>
             ))}
+            {phone && (
+              <a data-testid="dock-call" href={`tel:${digits(phone)}`} aria-label={callLabel} title={callLabel}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-pill)] text-ink-soft transition-colors hover:bg-surface hover:text-accent">
+                <Icon name="phone" size={18} />
+              </a>
+            )}
+            {zalo && (
+              <a data-testid="dock-zalo" href={`https://zalo.me/${digits(zalo)}`} target="_blank" rel="noreferrer" aria-label={zaloLabel} title={zaloLabel}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-pill)] text-ink-soft transition-colors hover:bg-surface hover:text-accent">
+                <Icon name="chat" size={18} />
+              </a>
+            )}
             <Link to="/contact" className="rounded bg-accent px-4 py-2 text-sm text-accent-ink transition-opacity hover:opacity-90">
               <T k="nav.cta.label" />
             </Link>
