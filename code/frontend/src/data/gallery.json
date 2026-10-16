@@ -1,0 +1,10 @@
+[
+  { "id": "g1", "_source": "web:pixabay.com", "caption": "The roasting room", "image": "/images/hero-roaster.jpg" },
+  { "id": "g2", "_source": "web:pixabay.com", "caption": "Green beans, sorted by hand", "image": "/images/sorting-beans.jpg" },
+  { "id": "g3", "_source": "web:pixabay.com", "caption": "Fresh off the roast", "image": "/images/beans-texture.jpg" },
+  { "id": "g4", "_source": "web:pixabay.com", "caption": "Cupping a new lot", "image": "/images/cupping.jpg" },
+  { "id": "g5", "_source": "web:pixabay.com", "caption": "Sacks waiting on the floor", "image": "/images/burlap-sacks.jpg" },
+  { "id": "g6", "_source": "web:pixabay.com", "caption": "A pour-over at the tasting bar", "image": "/images/pour-over.jpg" },
+  { "id": "g7", "_source": "web:pixabay.com", "caption": "The Đà Lạt highlands", "image": "/images/dalat-highlands.jpg" },
+  { "id": "g8", "_source": "web:pixabay.com", "caption": "Bagged and ready to go", "image": "/images/kraft-bag.jpg" }
+]
