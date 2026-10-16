@@ -51,31 +51,31 @@ export default function ContactForm({ fields = [], className = "", idPrefix = ""
   }
 
   if (state === "sent") {
-    return <p data-testid={testId} className={`text-lg ${className}`}><T k="contact.form.sent" /></p>;
+    return <p data-testid={testId} className={`text-lg ${className}`}><T k={`${contentKey}.sent`} /></p>;
   }
   const input = "w-full rounded border border-line bg-ground px-4 py-3 text-ink focus:outline-2 focus:outline-offset-2 focus:outline-accent";
   return (
     <form data-testid={testId} onSubmit={(e) => void submit(e)} className={`flex flex-col gap-4 ${className}`}>
-      <Field k="name" id={fieldId("name")}><input id={fieldId("name")} name="name" autoComplete="name" required className={input} /></Field>
-      <Field k="reply_to" id={fieldId("reply_to")}><input id={fieldId("reply_to")} name="reply_to" autoComplete="tel" required className={input} /></Field>
+      <Field k="name" contentKey={contentKey} id={fieldId("name")}><input id={fieldId("name")} name="name" autoComplete="name" required className={input} /></Field>
+      <Field k="reply_to" contentKey={contentKey} id={fieldId("reply_to")}><input id={fieldId("reply_to")} name="reply_to" autoComplete="tel" required className={input} /></Field>
       {fields.map((f) => (
-        <Field key={f.key} k={`fields.${f.key}`} id={fieldId(f.key)}><input id={fieldId(f.key)} name={f.key} type={f.type ?? "text"} className={input} /></Field>
+        <Field key={f.key} k={`fields.${f.key}`} contentKey={contentKey} id={fieldId(f.key)}><input id={fieldId(f.key)} name={f.key} type={f.type ?? "text"} className={input} /></Field>
       ))}
-      <Field k="message" id={fieldId("message")}><textarea id={fieldId("message")} name="message" rows={4} className={input} /></Field>
+      <Field k="message" contentKey={contentKey} id={fieldId("message")}><textarea id={fieldId("message")} name="message" rows={4} className={input} /></Field>
       <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" />
       {state === "failed" && <p role="alert" className="text-sm text-ink">{problem}</p>}
       {!canSend && <p className="text-sm text-ink-soft">{offline}</p>}
       <button type="submit" data-testid={submitTestId} disabled={state === "sending"} className="self-start rounded bg-accent px-6 py-3 text-accent-ink transition-opacity hover:opacity-90 disabled:opacity-60">
-        <T k={state === "sending" ? "contact.form.sending" : "contact.form.send"} />
+        <T k={state === "sending" ? `${contentKey}.sending` : `${contentKey}.send`} />
       </button>
     </form>
   );
 }
 
-function Field({ k, id, children }: { k: string; id: string; children: ReactNode }) {
+function Field({ k, id, contentKey, children }: { k: string; id: string; contentKey: string; children: ReactNode }) {
   return (
     <label htmlFor={id} className="flex flex-col gap-2 text-sm">
-      <T k={`contact.form.${k}`} className="text-ink-soft" />
+      <T k={`${contentKey}.${k}`} className="text-ink-soft" />
       {children}
     </label>
   );
