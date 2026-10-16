@@ -53,15 +53,15 @@ export default function ContactForm({ fields = [], className = "", idPrefix = ""
   if (state === "sent") {
     return <p data-testid={testId} className={`text-lg ${className}`}><T k={`${contentKey}.sent`} /></p>;
   }
-  const input = "w-full rounded bg-surface px-4 py-3 text-ink shadow-sm focus:outline-2 focus:outline-offset-2 focus:outline-accent";
-  /* Set with the "border" shorthand, not a Tailwind border-* class plus a
-     colour override: a class that only sets width (border-2) depends on the
-     colour utility that comes with it to also land, and on this form it did
-     not — the walk measured the field's edge at ~1:1 against the page,
-     i.e. no border rendered at all. The shorthand can't be dropped by a
-     class ordering issue; var(--ink) clears >3:1 against both --surface and
+  const input = "w-full rounded bg-surface px-4 py-3 text-ink focus:outline-2 focus:outline-offset-2 focus:outline-accent";
+  /* An inset box-shadow, not the "border" property: Tailwind's preflight
+     resets border-width to 0 on every element, and that reset was still
+     winning in the built CSS even with an inline border style — the walk
+     measured the field's edge at ~1:1 against the page, i.e. no border
+     rendered at all. box-shadow is never touched by that reset, follows the
+     "rounded" radius, and var(--ink) clears >3:1 against both --surface and
      --ground in both palettes. */
-  const inputStyle = { border: "1.5px solid var(--ink)" };
+  const inputStyle = { boxShadow: "inset 0 0 0 1.5px var(--ink)" };
   return (
     <form data-testid={testId} onSubmit={(e) => void submit(e)} className={`flex flex-col gap-4 ${className}`}>
       <Field k="name" contentKey={contentKey} id={fieldId("name")}><input id={fieldId("name")} name="name" autoComplete="name" required className={input} style={inputStyle} /></Field>
