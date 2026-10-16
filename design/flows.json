@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Browse the coffee list and see a price",
+    "steps": [
+      { "action": "open", "path": "/" },
+      { "action": "click", "selector": "[data-testid='nav-coffee']" },
+      { "action": "expect", "selector": "[data-testid='coffee-list']", "text": "" },
+      { "action": "expect", "selector": "[data-testid='coffee-price-0']", "text": "₫" }
+    ]
+  },
+  {
+    "name": "Call the roastery from the home page",
+    "steps": [
+      { "action": "open", "path": "/" },
+      { "action": "expect", "selector": "[data-testid='dock-call']", "text": "" }
+    ]
+  },
+  {
+    "name": "Message the roastery on Zalo",
+    "steps": [
+      { "action": "open", "path": "/" },
+      { "action": "expect", "selector": "[data-testid='dock-zalo']", "text": "" }
+    ]
+  },
+  {
+    "name": "Find the address, hours and map on the contact page",
+    "steps": [
+      { "action": "open", "path": "/contact" },
+      { "action": "expect", "selector": "[data-testid='contact-address']", "text": "Hùng Vương" },
+      { "action": "expect", "selector": "[data-testid='contact-hours']", "text": "7:00" },
+      { "action": "expect", "selector": "[data-testid='contact-map']", "text": "" }
+    ]
+  },
+  {
+    "name": "Send a general enquiry through the contact form",
+    "steps": [
+      { "action": "open", "path": "/contact" },
+      { "action": "type", "selector": "#name", "value": "Linh Nguyễn" },
+      { "action": "type", "selector": "#reply_to", "value": "0901234567" },
+      { "action": "type", "selector": "#message", "value": "Tôi muốn hỏi về cà phê rang mẻ nhỏ." },
+      { "action": "click", "selector": "[data-testid='contact-submit']" },
+      { "action": "expect", "selector": "[data-testid='contact-form']", "text": "" }
+    ]
+  },
+  {
+    "name": "A café sends a wholesale enquiry",
+    "steps": [
+      { "action": "open", "path": "/contact" },
+      { "action": "click", "selector": "[data-testid='wholesale-form-link']" },
+      { "action": "type", "selector": "#name", "value": "Quán Mây Tím" },
+      { "action": "type", "selector": "#reply_to", "value": "xinchao@quanmaytim.vn" },
+      { "action": "type", "selector": "#message", "value": "Quán chúng tôi muốn đặt sỉ 10kg cà phê hạt mỗi tháng." },
+      { "action": "click", "selector": "[data-testid='contact-submit']" },
+      { "action": "expect", "selector": "[data-testid='contact-form']", "text": "" }
+    ]
+  }
+]
