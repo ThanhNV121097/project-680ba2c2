@@ -1,56 +1,100 @@
 import { useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { T, useList, useContent } from "./editable";
 import Home from "./pages/Home";
+import Coffee from "./pages/Coffee";
+import About from "./pages/About";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 import Logo from "./components/Logo";
 import MenuToggle from "./components/MenuToggle";
+import MobileMenu from "./components/MobileMenu";
 import ThemeToggle from "./components/ThemeToggle";
 import ContactDock from "./components/ContactDock";
 import PhotoCredits from "./components/PhotoCredits";
+import SocialIcon from "./components/SocialIcon";
 
-/**
- * The shell the design replaces.
- *
- * This file is a placeholder so the scaffold builds and runs before the
- * design exists. The team rewrites it and adds components under
- * src/components/; what must stay is the rule every component follows: the
- * words come from content.json through <T/>, the colours from theme.css.
- *
- * The site has pages, not only a home page: each is a file in src/pages/ and
- * a <Route> below, sharing the header and footer. The footer keeps
- * <PhotoCredits/>: the stock photos' credits, which their licences ask for.
- */
+const NAV_TESTID: Record<string, string> = {
+  "/": "nav-home",
+  "/coffee": "nav-coffee",
+  "/about": "nav-about",
+  "/gallery": "nav-gallery",
+  "/contact": "nav-contact",
+};
+
 export default function App() {
   const links = useList<{ label: string; href: string }>("nav.links");
   const name = useContent("site.name");
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+
   return (
     <div className="min-h-screen bg-ground text-ink font-body">
-      <header className="mx-auto max-w-page px-[var(--gutter)] py-6 flex items-center justify-between">
-        <Link to="/" aria-label={name}><Logo /></Link>
-        <nav className="hidden lg:flex items-center gap-6 text-sm">
-          {links.map((l, i) => <T key={i} k={`nav.links.${i}.label`} as="a" href={l.href} />)}
-          <T k="nav.cta.label" as="a" href="#contact" className="rounded bg-accent px-4 py-2 text-accent-ink" />
-          <ThemeToggle />
-        </nav>
-        <div className="flex items-center gap-1 lg:hidden">
-          <ThemeToggle />
-          <MenuToggle open={open} onToggle={() => setOpen((o) => !o)} />
+      <header className="sticky top-0 z-30 border-b border-line bg-ground/95 backdrop-blur">
+        <div className="mx-auto flex h-[var(--header-h)] max-w-page items-center justify-between px-[var(--gutter)]">
+          <Link to="/" aria-label={name} onClick={() => setOpen(false)}><Logo /></Link>
+          <nav className="hidden items-center gap-8 text-sm lg:flex">
+            {links.map((l, i) => (
+              <Link key={i} to={l.href} data-testid={NAV_TESTID[l.href]}
+                className={`transition-colors hover:text-accent ${pathname === l.href ? "text-ink" : "text-ink-soft"}`}>
+                <T k={`nav.links.${i}.label`} />
+              </Link>
+            ))}
+            <Link to="/contact" className="rounded bg-accent px-4 py-2 text-sm text-accent-ink transition-opacity hover:opacity-90">
+              <T k="nav.cta.label" />
+            </Link>
+            <ThemeToggle />
+          </nav>
+          <div className="flex items-center gap-1 lg:hidden">
+            <ThemeToggle />
+            <MenuToggle open={open} onToggle={() => setOpen((o) => !o)} />
+          </div>
         </div>
       </header>
-      {open && (
-        <nav className="fixed inset-0 top-[88px] z-40 flex flex-col gap-6 bg-ground px-[var(--gutter)] py-10 text-2xl lg:hidden">
-          {links.map((l, i) => <T key={i} k={`nav.links.${i}.label`} as="a" href={l.href} />)}
-        </nav>
-      )}
-      <main className="mx-auto max-w-page px-[var(--gutter)] py-24">
+      <MobileMenu open={open} onClose={() => setOpen(false)}>
+        {links.map((l, i) => (
+          <Link key={i} to={l.href} onClick={() => setOpen(false)} data-testid={`mobile-${NAV_TESTID[l.href]}`}
+            className="text-2xl text-ink">
+            <T k={`nav.links.${i}.label`} />
+          </Link>
+        ))}
+        <Link to="/contact" onClick={() => setOpen(false)}
+          className="mt-4 inline-block rounded bg-accent px-6 py-3 text-lg text-accent-ink">
+          <T k="nav.cta.label" />
+        </Link>
+      </MobileMenu>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/coffee" element={<Coffee />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      <footer className="mx-auto max-w-page px-[var(--gutter)] py-12 text-sm text-ink-soft border-t border-line">
-        <T k="footer.line" /> · {name}
-        <PhotoCredits className="mt-3" />
+      <footer className="border-t border-line">
+        <div className="mx-auto max-w-page px-[var(--gutter)] py-12">
+          <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
+            <div className="flex flex-col gap-3">
+              <Logo />
+              <T k="footer.line" as="p" className="max-w-[32ch] text-sm text-ink-soft" />
+              <div className="flex gap-3 pt-1">
+                <a href={`https://zalo.me/${useContent<string>("contact.zalo").replace(/\D/g, "")}`} target="_blank" rel="noreferrer" aria-label="Zalo" className="text-ink-soft transition-colors hover:text-accent">
+                  <SocialIcon network="zalo" />
+                </a>
+              </div>
+            </div>
+            <nav className="flex flex-col gap-2 text-sm">
+              <T k="footer.linksHeading" as="span" className="text-ink-soft" />
+              {links.map((l, i) => (
+                <Link key={i} to={l.href} className="text-ink transition-colors hover:text-accent">
+                  <T k={`nav.links.${i}.label`} />
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <PhotoCredits className="mt-10 border-t border-line pt-6" />
+        </div>
       </footer>
       <ContactDock />
     </div>
