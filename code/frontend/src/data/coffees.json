@@ -10,7 +10,7 @@
     "note": "Red grape and brown sugar, a crisp high-altitude cup from the slopes above the workshop.",
     "priceWhole": 185000,
     "priceGround": 185000,
-    "image": ""
+    "image": "/images/coffee-cau-dat.jpg"
   },
   {
     "id": "k-ho-lang-biang",
@@ -23,7 +23,7 @@
     "note": "Dried longan and dark cherry, grown by K'Ho smallholders at the foot of Lang Biang.",
     "priceWhole": 195000,
     "priceGround": 195000,
-    "image": ""
+    "image": "/images/coffee-k-ho.jpg"
   },
   {
     "id": "khe-sanh",
@@ -36,7 +36,7 @@
     "note": "Cane sugar sweetness with a soft citrus finish, from the basalt soil of Quảng Trị's highlands.",
     "priceWhole": 180000,
     "priceGround": 180000,
-    "image": ""
+    "image": "/images/coffee-khe-sanh.jpg"
   },
   {
     "id": "son-la",
@@ -49,7 +49,7 @@
     "note": "Green apple and jasmine, a bright northern-highland arabica roasted light to keep its acidity.",
     "priceWhole": 200000,
     "priceGround": 200000,
-    "image": ""
+    "image": "/images/coffee-son-la.jpg"
   },
   {
     "id": "a-luoi",
@@ -62,7 +62,7 @@
     "note": "Stewed plum and cocoa, a fuller-bodied cup from the central highlands near Huế.",
     "priceWhole": 178000,
     "priceGround": 178000,
-    "image": ""
+    "image": "/images/coffee-a-luoi.jpg"
   },
   {
     "id": "dak-lak",
@@ -75,7 +75,7 @@
     "note": "Toasted hazelnut and milk chocolate, the steady, familiar robusta-growing heartland.",
     "priceWhole": 150000,
     "priceGround": 150000,
-    "image": ""
+    "image": "/images/coffee-dak-lak.jpg"
   },
   {
     "id": "may-house",
@@ -88,7 +88,7 @@
     "note": "Our everyday cup: arabica for sweetness, a little robusta for body — built for phin and moka pot alike.",
     "priceWhole": 160000,
     "priceGround": 160000,
-    "image": ""
+    "image": "/images/coffee-may-house.jpg"
   },
   {
     "id": "may-espresso",
@@ -101,6 +101,6 @@
     "note": "Dark chocolate and caramelised sugar, roasted for a thick, sweet shot that holds up in milk.",
     "priceWhole": 165000,
     "priceGround": 165000,
-    "image": ""
+    "image": "/images/coffee-may-espresso.jpg"
   }
 ]
