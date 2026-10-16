@@ -57,12 +57,12 @@ export default function ContactForm({ fields = [], className = "", idPrefix = ""
   const inputStyle = { borderColor: "var(--ink-soft)" };
   return (
     <form data-testid={testId} onSubmit={(e) => void submit(e)} className={`flex flex-col gap-4 ${className}`}>
-      <Field k="name" contentKey={contentKey} id={fieldId("name")}><input id={fieldId("name")} name="name" autoComplete="name" required className={input} /></Field>
-      <Field k="reply_to" contentKey={contentKey} id={fieldId("reply_to")}><input id={fieldId("reply_to")} name="reply_to" autoComplete="tel" required className={input} /></Field>
+      <Field k="name" contentKey={contentKey} id={fieldId("name")}><input id={fieldId("name")} name="name" autoComplete="name" required className={input} style={inputStyle} /></Field>
+      <Field k="reply_to" contentKey={contentKey} id={fieldId("reply_to")}><input id={fieldId("reply_to")} name="reply_to" autoComplete="tel" required className={input} style={inputStyle} /></Field>
       {fields.map((f) => (
-        <Field key={f.key} k={`fields.${f.key}`} contentKey={contentKey} id={fieldId(f.key)}><input id={fieldId(f.key)} name={f.key} type={f.type ?? "text"} className={input} /></Field>
+        <Field key={f.key} k={`fields.${f.key}`} contentKey={contentKey} id={fieldId(f.key)}><input id={fieldId(f.key)} name={f.key} type={f.type ?? "text"} className={input} style={inputStyle} /></Field>
       ))}
-      <Field k="message" contentKey={contentKey} id={fieldId("message")}><textarea id={fieldId("message")} name="message" rows={4} className={input} /></Field>
+      <Field k="message" contentKey={contentKey} id={fieldId("message")}><textarea id={fieldId("message")} name="message" rows={4} className={input} style={inputStyle} /></Field>
       <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" />
       {state === "failed" && <p role="alert" className="text-sm text-ink">{problem}</p>}
       {!canSend && <p className="text-sm text-ink-soft">{offline}</p>}
