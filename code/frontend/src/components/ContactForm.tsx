@@ -70,7 +70,7 @@ export default function ContactForm({ fields = [], className = "", idPrefix = ""
         <Field key={f.key} k={`fields.${f.key}`} contentKey={contentKey} id={fieldId(f.key)}><input id={fieldId(f.key)} name={f.key} type={f.type ?? "text"} className={input} style={inputStyle} /></Field>
       ))}
       <Field k="message" contentKey={contentKey} id={fieldId("message")}><textarea id={fieldId("message")} name="message" rows={4} className={input} style={inputStyle} /></Field>
-      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" />
+      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" style={inputStyle} />
       {state === "failed" && <p role="alert" className="text-sm text-ink">{problem}</p>}
       {!canSend && <p className="text-sm text-ink-soft">{offline}</p>}
       <button type="submit" data-testid={submitTestId} disabled={state === "sending"} className="self-start rounded bg-accent px-6 py-3 text-accent-ink transition-opacity hover:opacity-90 disabled:opacity-60">
