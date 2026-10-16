@@ -85,7 +85,7 @@ export default function Contact() {
             <Icon name="arrow" size={18} />
           </a>
           <div id="wholesale-form" className="mt-8 max-w-lg">
-            <ContactForm idPrefix="wholesale" testId="wholesale-form" submitTestId="wholesale-submit" />
+            <ContactForm idPrefix="wholesale" testId="wholesale-form" submitTestId="wholesale-submit" contentKey="contact.wholesaleForm" />
           </div>
         </div>
       </motion.section>
