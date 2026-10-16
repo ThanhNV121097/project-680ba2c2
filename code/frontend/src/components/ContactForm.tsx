@@ -19,10 +19,20 @@ export interface FormField {
 
 type State = "idle" | "sending" | "sent" | "failed";
 
-export default function ContactForm({ fields = [], className = "" }: { fields?: FormField[]; className?: string }) {
+export default function ContactForm({ fields = [], className = "", idPrefix = "", testId = "contact-form", submitTestId = "contact-submit", contentKey = "contact.form" }: {
+  fields?: FormField[];
+  className?: string;
+  /** Prefixes every input's id, so two forms on one page (general + wholesale) get different ids. */
+  idPrefix?: string;
+  testId?: string;
+  submitTestId?: string;
+  /** The content.json key this form's labels live under — "contact.form" by default, "contact.wholesaleForm" for a second form on the same page. */
+  contentKey?: string;
+}) {
   const [state, setState] = useState<State>("idle");
   const [problem, setProblem] = useState("");
-  const offline = useContent("contact.form.offline");
+  const offline = useContent(`${contentKey}.offline`);
+  const fieldId = (k: string) => (idPrefix ? `${idPrefix}-${k}` : k);
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -41,31 +51,39 @@ export default function ContactForm({ fields = [], className = "" }: { fields?: 
   }
 
   if (state === "sent") {
-    return <T k="contact.form.sent" as="p" className={`text-lg ${className}`} />;
+    return <p data-testid={testId} className={`text-lg ${className}`}><T k={`${contentKey}.sent`} /></p>;
   }
-  const input = "w-full rounded border border-line bg-ground px-4 py-3 text-ink";
+  const input = "w-full rounded bg-surface px-4 py-3 text-ink focus:outline-2 focus:outline-offset-2 focus:outline-accent";
+  /* An inset box-shadow, not the "border" property: Tailwind's preflight
+     resets border-width to 0 on every element, and that reset was still
+     winning in the built CSS even with an inline border style — the walk
+     measured the field's edge at ~1:1 against the page, i.e. no border
+     rendered at all. box-shadow is never touched by that reset, follows the
+     "rounded" radius, and var(--ink) clears >3:1 against both --surface and
+     --ground in both palettes. */
+  const inputStyle = { boxShadow: "inset 0 0 0 1.5px var(--ink)" };
   return (
-    <form onSubmit={(e) => void submit(e)} className={`flex flex-col gap-4 ${className}`}>
-      <Field k="name"><input name="name" autoComplete="name" required className={input} /></Field>
-      <Field k="reply_to"><input name="reply_to" autoComplete="tel" required className={input} /></Field>
+    <form data-testid={testId} onSubmit={(e) => void submit(e)} className={`flex flex-col gap-4 ${className}`}>
+      <Field k="name" contentKey={contentKey} id={fieldId("name")}><input id={fieldId("name")} name="name" autoComplete="name" required className={input} style={inputStyle} /></Field>
+      <Field k="reply_to" contentKey={contentKey} id={fieldId("reply_to")}><input id={fieldId("reply_to")} name="reply_to" autoComplete="tel" required className={input} style={inputStyle} /></Field>
       {fields.map((f) => (
-        <Field key={f.key} k={`fields.${f.key}`}><input name={f.key} type={f.type ?? "text"} className={input} /></Field>
+        <Field key={f.key} k={`fields.${f.key}`} contentKey={contentKey} id={fieldId(f.key)}><input id={fieldId(f.key)} name={f.key} type={f.type ?? "text"} className={input} style={inputStyle} /></Field>
       ))}
-      <Field k="message"><textarea name="message" rows={4} className={input} /></Field>
-      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" />
+      <Field k="message" contentKey={contentKey} id={fieldId("message")}><textarea id={fieldId("message")} name="message" rows={4} className={input} style={inputStyle} /></Field>
+      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-px w-px opacity-0" style={inputStyle} />
       {state === "failed" && <p role="alert" className="text-sm text-ink">{problem}</p>}
       {!canSend && <p className="text-sm text-ink-soft">{offline}</p>}
-      <button type="submit" disabled={state === "sending"} className="self-start rounded bg-accent px-6 py-3 text-accent-ink disabled:opacity-60">
-        <T k={state === "sending" ? "contact.form.sending" : "contact.form.send"} />
+      <button type="submit" data-testid={submitTestId} disabled={state === "sending"} className="self-start rounded bg-accent px-6 py-3 text-accent-ink transition-opacity hover:opacity-90 disabled:opacity-60">
+        <T k={state === "sending" ? `${contentKey}.sending` : `${contentKey}.send`} />
       </button>
     </form>
   );
 }
 
-function Field({ k, children }: { k: string; children: ReactNode }) {
+function Field({ k, id, contentKey, children }: { k: string; id: string; contentKey: string; children: ReactNode }) {
   return (
-    <label className="flex flex-col gap-2 text-sm">
-      <T k={`contact.form.${k}`} className="text-ink-soft" />
+    <label htmlFor={id} className="flex flex-col gap-2 text-sm">
+      <T k={`${contentKey}.${k}`} className="text-ink-soft" />
       {children}
     </label>
   );

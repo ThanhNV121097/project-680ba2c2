@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "path": "/images/beans-texture.jpg",
+    "author": "Alexas_Fotos",
+    "source": "Pixabay",
+    "license": "Pixabay Content License",
+    "page": "https://pixabay.com/photos/coffee-beans-coffee-roasted-1291656/"
+  },
+  {
+    "path": "/images/burlap-sacks.jpg",
+    "author": "ceguito",
+    "source": "Pixabay",
+    "license": "Pixabay Content License",
+    "page": "https://pixabay.com/photos/cafe-de-colombia-cafe-in-sac-2225559/"
+  },
+  {
+    "path": "/images/cupping.jpg",
+    "author": "cocoparisienne",
+    "source": "Pixabay",
+    "license": "Pixabay Content License",
+    "page": "https://pixabay.com/photos/coffee-coffee-cup-cup-drink-beans-2714970/"
+  },
+  {
+    "path": "/images/dalat-highlands.jpg",
+    "author": "CUONG_ART",
+    "source": "Pixabay",
+    "license": "Pixabay Content License",
+    "page": "https://pixabay.com/photos/mountain-nature-dusk-da-lat-6525356/"
+  },
+  {
+    "path": "/images/hero-roaster.jpg",
+    "author": "motomotosc",
+    "source": "Pixabay",
+    "license": "Pixabay Content License",
+    "page": "https://pixabay.com/photos/coffee-beans-caffeine-roasted-8406187/"
+  },
+  {
+    "path": "/images/kraft-bag.jpg",
+    "author": "BRRT",
+    "source": "Pixabay",
+    "license": "Pixabay Content License",
+    "page": "https://pixabay.com/photos/brown-paper-bag-bag-paper-brown-970976/"
+  },
+  {
+    "path": "/images/pour-over.jpg",
+    "author": "kavekostolo",
+    "source": "Pixabay",
+    "license": "Pixabay Content License",
+    "page": "https://pixabay.com/photos/chemex-coffee-filter-coffee-1247169/"
+  },
+  {
+    "path": "/images/sorting-beans.jpg",
+    "author": "StockSnap",
+    "source": "Pixabay",
+    "license": "Pixabay Content License",
+    "page": "https://pixabay.com/photos/coffee-bean-hand-ring-2605280/"
+  }
+]

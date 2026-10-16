@@ -1,0 +1,23 @@
+[
+  {
+    "id": "roaster",
+    "_source": "assumed",
+    "role": "The roaster",
+    "bio": "Runs the drum: every batch logged by weight, temperature and time, tasted before it is bagged.",
+    "image": ""
+  },
+  {
+    "id": "cupper",
+    "_source": "assumed",
+    "role": "The cupper",
+    "bio": "Cups each new lot blind against the last one, so a bag leaving the workshop tastes the way it should.",
+    "image": ""
+  },
+  {
+    "id": "wholesale",
+    "_source": "assumed",
+    "role": "Wholesale",
+    "bio": "Takes the café orders: roast dates, grind size and delivery worked out café by café.",
+    "image": ""
+  }
+]

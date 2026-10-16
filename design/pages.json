@@ -1,0 +1,7 @@
+[
+  { "path": "/", "name": "Home" },
+  { "path": "/coffee", "name": "Coffee" },
+  { "path": "/about", "name": "About" },
+  { "path": "/gallery", "name": "Gallery" },
+  { "path": "/contact", "name": "Contact" }
+]

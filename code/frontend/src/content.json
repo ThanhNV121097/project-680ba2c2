@@ -1,56 +1,106 @@
 {
   "site": {
-    "name": "Your business",
+    "name": "Mây Coffee Roasters",
     "logo": "",
-    "description": "One sentence on what the business is, for search results and shared links.",
+    "description": "A small-batch specialty coffee roastery in Đà Lạt — six single origins and two blends, sold whole bean or ground, with wholesale for cafés.",
     "locale": "vi-VN",
     "defaultMode": "system"
   },
   "nav": {
     "links": [
-      {
-        "label": "Home",
-        "href": "/"
-      }
+      { "label": "Home", "href": "/" },
+      { "label": "Coffee", "href": "/coffee" },
+      { "label": "About", "href": "/about" },
+      { "label": "Gallery", "href": "/gallery" },
+      { "label": "Contact", "href": "/contact" }
     ],
-    "cta": {
-      "label": "Get in touch",
-      "href": "#contact"
-    },
-    "theme": {
-      "toLight": "Switch to light mode",
-      "toDark": "Switch to dark mode"
-    },
-    "menu": {
-      "open": "Open menu",
-      "close": "Close menu"
-    }
+    "cta": { "label": "Get in touch", "href": "/contact" },
+    "theme": { "toLight": "Switch to light mode", "toDark": "Switch to dark mode" },
+    "menu": { "open": "Open menu", "close": "Close menu" }
   },
   "hero": {
-    "eyebrow": "",
-    "headline": "A headline of a few words",
-    "sub": "One line under it, and no more.",
-    "cta": {
-      "label": "Get in touch",
-      "href": "#contact"
+    "eyebrow": "Small-batch roastery, Đà Lạt",
+    "headline": "Roasted in small batches, a few kilos at a time",
+    "sub": "Six single origins and two blends, sold whole bean or ground. Taste at the workshop, or order sỉ for your café.",
+    "cta": { "label": "See our coffee", "href": "/coffee" },
+    "ctaSecondary": { "label": "Wholesale enquiries", "href": "/contact#wholesale" }
+  },
+  "home": {
+    "coffeeEyebrow": "the coffee",
+    "coffeeHeading": "Eight coffees, roasted this week",
+    "coffeeSub": "Six single origins from Vietnam's highlands, and two house blends built for phin and espresso.",
+    "coffeeCta": "See the full list",
+    "aboutEyebrow": "the workshop",
+    "aboutHeading": "A small roastery on Hùng Vương",
+    "aboutBody": "Mây roasts in small batches so every bag is tasted before it leaves the drum. Come by to try a cup and buy beans to take home — or ask about an order for your café.",
+    "aboutCta": "Our story",
+    "wholesaleEyebrow": "for cafés",
+    "wholesaleHeading": "We roast for cafés too",
+    "wholesaleBody": "Wholesale orders for cafés: roast dates, grind and delivery worked out together.",
+    "wholesaleCta": "Talk to us about sỉ",
+    "galleryEyebrow": "the workshop in pictures",
+    "galleryHeading": "Beans, drum and cups",
+    "galleryCta": "See the full gallery"
+  },
+  "pages": {
+    "coffee": {
+      "title": "Coffee",
+      "description": "Six single origins and two blends from Mây Coffee Roasters, sold whole bean or ground, with prices in VND.",
+      "eyebrow": "the coffee",
+      "heading": "Six single origins, two blends",
+      "sub": "Roasted in small batches at our workshop in Đà Lạt. Prices are for 250g, whole bean or ground — tell us which when you order.",
+      "singleOrigin": "Single origin",
+      "blend": "Blend",
+      "wholeLabel": "Whole bean",
+      "groundLabel": "Ground",
+      "unit": "250g"
+    },
+    "about": {
+      "title": "About",
+      "description": "The story of Mây Coffee Roasters, a small-batch specialty roastery in Đà Lạt.",
+      "eyebrow": "the workshop",
+      "heading": "A small roastery, roasted by hand",
+      "intro": "Mây Coffee Roasters is a specialty coffee workshop in Đà Lạt. We roast in small batches — a few kilos at a time — so each one can be tasted and adjusted before it is bagged.",
+      "body1Heading": "From the highlands to the drum",
+      "body1": "Our beans come from Vietnam's coffee-growing highlands — from Cầu Đất, right above the workshop, to Sơn La in the far north. Each lot is cupped before we buy it and cupped again after it is roasted, so what you taste in the cup is what we tasted in the cupping room.",
+      "body2Heading": "Taste before you buy",
+      "body2": "Drop by the workshop at 24 Hùng Vương to try a cup before you choose a bag. We pour by phin or V60, whichever shows the coffee best — and we're happy to talk through roast levels and grind size for home brewing.",
+      "teamEyebrow": "who roasts it",
+      "teamHeading": "Behind the drum"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "description": "Photographs of the roasting workshop, the beans and the tasting bar at Mây Coffee Roasters.",
+      "eyebrow": "the workshop in pictures",
+      "heading": "Beans, drum and cups"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Call, message on Zalo, or visit Mây Coffee Roasters at 24 Hùng Vương, Phường 9, Đà Lạt. Open 7:00–18:00 daily.",
+      "eyebrow": "visit us",
+      "heading": "Come by, call, or message us",
+      "detailsHeading": "Find us",
+      "formHeading": "Send us a message",
+      "formSub": "Questions about a coffee, a batch, or dropping by — we read every message.",
+      "wholesaleHeading": "Ordering for a café?",
+      "wholesaleSub": "Tell us the café's name, how much coffee you need and how often, and we'll work out a roast schedule together.",
+      "wholesaleLinkLabel": "Send a wholesale enquiry"
     }
   },
   "footer": {
-    "line": "Your business · District 1, Saigon"
+    "line": "Mây Coffee Roasters · 24 Hùng Vương, Phường 9, Đà Lạt",
+    "linksHeading": "Pages"
   },
   "credits": {
     "label": "Photos"
   },
   "contact": {
-    "phone": "",
-    "zalo": "",
-    "email": "",
-    "address": "",
-    "hours": "",
-    "dock": {
-      "call": "Call us",
-      "zalo": "Message us on Zalo"
-    },
+    "phone": "0263 3822 114",
+    "zalo": "0263 3822 114",
+    "email": "xinchao@maycoffee.vn",
+    "address": "24 Hùng Vương, Phường 9, Đà Lạt",
+    "hours": "7:00–18:00 daily",
+    "dock": { "call": "Call us", "zalo": "Message us on Zalo" },
     "form": {
       "name": "Your name",
       "reply_to": "Phone or email",
@@ -60,6 +110,15 @@
       "sent": "Thank you — we have your message and will answer soon.",
       "offline": "This form is not connected yet — call or message us instead.",
       "fields": {}
+    },
+    "wholesaleForm": {
+      "name": "Café name",
+      "reply_to": "Phone or email",
+      "message": "What you're ordering, and how often",
+      "send": "Send enquiry",
+      "sending": "Sending…",
+      "sent": "Thank you — we have your wholesale enquiry and will answer soon.",
+      "offline": "This form is not connected yet — call or message us instead."
     }
   }
 }

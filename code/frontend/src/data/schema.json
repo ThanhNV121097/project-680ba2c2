@@ -1,3 +1,33 @@
 {
-  "collections": {}
+  "collections": {
+    "coffees": {
+      "label": "Coffee",
+      "fields": [
+        { "key": "name", "label": "Name", "type": "text" },
+        { "key": "kind", "label": "Kind", "type": "text" },
+        { "key": "origin", "label": "Origin", "type": "text" },
+        { "key": "process", "label": "Process", "type": "text" },
+        { "key": "roast", "label": "Roast level", "type": "text" },
+        { "key": "note", "label": "Tasting note", "type": "longtext" },
+        { "key": "priceWhole", "label": "Price, whole bean 250g", "type": "price", "currency": "VND" },
+        { "key": "priceGround", "label": "Price, ground 250g", "type": "price", "currency": "VND" },
+        { "key": "image", "label": "Picture", "type": "image" }
+      ]
+    },
+    "gallery": {
+      "label": "Gallery",
+      "fields": [
+        { "key": "caption", "label": "Caption", "type": "text" },
+        { "key": "image", "label": "Picture", "type": "image" }
+      ]
+    },
+    "team": {
+      "label": "Team",
+      "fields": [
+        { "key": "role", "label": "Role", "type": "text" },
+        { "key": "bio", "label": "What they do", "type": "longtext" },
+        { "key": "image", "label": "Picture", "type": "image" }
+      ]
+    }
+  }
 }
