@@ -19,17 +19,19 @@ export interface FormField {
 
 type State = "idle" | "sending" | "sent" | "failed";
 
-export default function ContactForm({ fields = [], className = "", idPrefix = "", testId = "contact-form", submitTestId = "contact-submit" }: {
+export default function ContactForm({ fields = [], className = "", idPrefix = "", testId = "contact-form", submitTestId = "contact-submit", contentKey = "contact.form" }: {
   fields?: FormField[];
   className?: string;
   /** Prefixes every input's id, so two forms on one page (general + wholesale) get different ids. */
   idPrefix?: string;
   testId?: string;
   submitTestId?: string;
+  /** The content.json key this form's labels live under — "contact.form" by default, "contact.wholesaleForm" for a second form on the same page. */
+  contentKey?: string;
 }) {
   const [state, setState] = useState<State>("idle");
   const [problem, setProblem] = useState("");
-  const offline = useContent("contact.form.offline");
+  const offline = useContent(`${contentKey}.offline`);
   const fieldId = (k: string) => (idPrefix ? `${idPrefix}-${k}` : k);
 
   async function submit(e: FormEvent<HTMLFormElement>) {
