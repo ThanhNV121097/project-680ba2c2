@@ -53,7 +53,7 @@ export default function ContactForm({ fields = [], className = "", idPrefix = ""
   if (state === "sent") {
     return <p data-testid={testId} className={`text-lg ${className}`}><T k={`${contentKey}.sent`} /></p>;
   }
-  const input = "w-full rounded border-2 border-line bg-surface px-4 py-3 text-ink focus:outline-2 focus:outline-offset-2 focus:outline-accent focus:border-accent";
+  const input = "w-full rounded border-2 border-ink-soft/70 bg-surface px-4 py-3 text-ink shadow-sm focus:outline-2 focus:outline-offset-2 focus:outline-accent focus:border-accent";
   return (
     <form data-testid={testId} onSubmit={(e) => void submit(e)} className={`flex flex-col gap-4 ${className}`}>
       <Field k="name" contentKey={contentKey} id={fieldId("name")}><input id={fieldId("name")} name="name" autoComplete="name" required className={input} /></Field>
