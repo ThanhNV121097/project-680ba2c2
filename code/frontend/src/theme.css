@@ -17,8 +17,15 @@
   --font-body: "Inter";
   --weight-display: 500;
   --tracking-display: -0.02em;
-  --size-h1: clamp(2.5rem, 5.4vw, 4.75rem);
-  --size-h2: clamp(2rem, 3.6vw, 3.25rem);
+  /* One scale, in two parts, so every size on the page is a step and no two
+     sizes do the same job. Display steps by about 1.5, text by about 1.2:
+     76 → 52 → 34 | 22 → 17 → 14 → 12. The 52-to-20 jump this replaces had
+     nothing between a section heading and its body, and 18px beside 17px
+     read as an accident rather than a decision. */
+  --size-h1: clamp(2.5rem, 5.4vw, 4.75rem);   /* 40 → 76 */
+  --size-h2: clamp(2rem, 3.6vw, 3.25rem);     /* 32 → 52 */
+  --size-h3: clamp(1.5rem, 2.4vw, 2.125rem);  /* 24 → 34, the step that was missing */
+  --size-lead: clamp(1.125rem, 1.4vw, 1.375rem); /* 18 → 22, a paragraph that introduces */
 
   --radius: 12px;
   --radius-sm: 6px;

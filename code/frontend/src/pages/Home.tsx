@@ -25,7 +25,11 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Picture src="/images/hero-roaster.jpg" alt="Inside the roasting workshop, a drum roaster at work" className="h-full w-full object-cover" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--ground)] via-[color:var(--ground)]/70 to-[color:var(--ground)]/10" />
+          {/* The words sit on ground they can be read against: solid to 38%,
+              still 72% where the sub-line ends, and only then opening out so
+              the roaster is seen. The sub-line used to run to 46ch, well past
+              where this fell to 10%, and crossed the beans. */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--ground)_0%,var(--ground)_38%,color-mix(in_srgb,var(--ground)_72%,transparent)_58%,color-mix(in_srgb,var(--ground)_12%,transparent)_100%)]" />
           <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--ground)]/80 via-transparent to-transparent lg:hidden" />
         </div>
         <motion.div
@@ -36,7 +40,7 @@ export default function Home() {
         >
           <T k="hero.eyebrow" as="p" className="text-sm font-medium uppercase tracking-[0.08em] text-accent" />
           <T k="hero.headline" as="h1" className="max-w-[16ch] text-[length:var(--size-h1)] leading-[1.05] text-ink" />
-          <T k="hero.sub" as="p" className="max-w-[46ch] text-lg text-ink-soft" />
+          <T k="hero.sub" as="p" className="max-w-[34ch] text-[length:var(--size-lead)] leading-[1.5] text-ink-soft" />
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link to="/coffee" data-testid="hero-cta" className="whitespace-nowrap rounded bg-accent px-6 py-3 text-accent-ink transition-opacity hover:opacity-90">
               <T k="hero.cta.label" />
@@ -53,7 +57,7 @@ export default function Home() {
         <div className="flex flex-col items-start gap-2 border-l-2 border-accent pl-5">
           <T k="home.coffeeEyebrow" as="p" className="text-sm font-medium uppercase tracking-[0.08em] text-ink-soft" />
           <T k="home.coffeeHeading" as="h2" className="text-[length:var(--size-h2)] text-ink" />
-          <T k="home.coffeeSub" as="p" className="max-w-[60ch] text-ink-soft" />
+          <T k="home.coffeeSub" as="p" className="max-w-[52ch] text-[length:var(--size-lead)] leading-[1.5] text-ink-soft" />
         </div>
         <Grid max={4} phone={2} className="mt-10">
           {coffees.map((c) => (

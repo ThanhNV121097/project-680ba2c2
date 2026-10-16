@@ -21,7 +21,7 @@
   "hero": {
     "eyebrow": "Small-batch roastery, Đà Lạt",
     "headline": "Roasted in small batches, a few kilos at a time",
-    "sub": "Six single origins and two blends, sold whole bean or ground. Taste at the workshop, or order sỉ for your café.",
+    "sub": "Six single origins and two blends, sold whole bean or ground. Taste at the workshop, or order wholesale for your café.",
     "cta": { "label": "See our coffee", "href": "/coffee" },
     "ctaSecondary": { "label": "Wholesale enquiries", "href": "/contact#wholesale" }
   },
@@ -37,7 +37,7 @@
     "wholesaleEyebrow": "for cafés",
     "wholesaleHeading": "We roast for cafés too",
     "wholesaleBody": "Wholesale orders for cafés: roast dates, grind and delivery worked out together.",
-    "wholesaleCta": "Talk to us about sỉ",
+    "wholesaleCta": "Talk to us about wholesale",
     "galleryEyebrow": "the workshop in pictures",
     "galleryHeading": "Beans, drum and cups",
     "galleryCta": "See the full gallery"
