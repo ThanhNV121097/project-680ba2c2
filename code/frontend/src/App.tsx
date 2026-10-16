@@ -10,9 +10,10 @@ import Logo from "./components/Logo";
 import MenuToggle from "./components/MenuToggle";
 import MobileMenu from "./components/MobileMenu";
 import ThemeToggle from "./components/ThemeToggle";
-import ContactDock from "./components/ContactDock";
+import ContactDock, { digits } from "./components/ContactDock";
 import PhotoCredits from "./components/PhotoCredits";
 import SocialIcon from "./components/SocialIcon";
+import Icon from "./components/Icon";
 
 const NAV_TESTID: Record<string, string> = {
   "/": "nav-home",
