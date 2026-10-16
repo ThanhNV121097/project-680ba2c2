@@ -79,11 +79,13 @@ export default function App() {
             <div className="flex flex-col gap-3">
               <Logo />
               <T k="footer.line" as="p" className="max-w-[32ch] text-sm text-ink-soft" />
-              <div className="flex gap-3 pt-1">
-                <a href={`https://zalo.me/${useContent<string>("contact.zalo").replace(/\D/g, "")}`} target="_blank" rel="noreferrer" aria-label="Zalo" className="text-ink-soft transition-colors hover:text-accent">
-                  <SocialIcon network="zalo" />
-                </a>
-              </div>
+              {zalo && (
+                <div className="flex gap-3 pt-1">
+                  <a href={`https://zalo.me/${zalo.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" aria-label="Zalo" className="text-ink-soft transition-colors hover:text-accent">
+                    <SocialIcon network="zalo" />
+                  </a>
+                </div>
+              )}
             </div>
             <nav className="flex flex-col gap-2 text-sm">
               <T k="footer.linksHeading" as="span" className="text-ink-soft" />
