@@ -2,13 +2,13 @@
    these, so the owner changes the whole site by changing a value here — in
    the Studio, without a rebuild. Components never carry a raw colour. */
 :root {
-  --ground: #F6F2EA;
+  --ground: #F3EEE4;
   --surface: #FFFFFF;
-  --ink: #1B1917;
-  --ink-soft: #5E5954;
-  --accent: #B8412E;
-  --accent-ink: #FFFFFF;
-  --line: rgba(27, 25, 23, 0.12);
+  --ink: #241B14;
+  --ink-soft: #78695A;
+  --accent: #A8432A;
+  --accent-ink: #FBF4EC;
+  --line: rgba(36, 27, 20, 0.14);
   color-scheme: light;
 
   /* House style: one clean sans, headings confident but not heavy — an h1
