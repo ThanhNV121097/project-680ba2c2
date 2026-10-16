@@ -26,11 +26,11 @@ Faces: Inter (free, Google Fonts, variable) — close to Awwwards' Inter Tight a
 
 ## COMMITMENTS
 
-1. The hero photograph (the roasting room) runs full width behind/beside the headline, bleeding to the viewport edge on both sides — not boxed beside the text in a two-column template.
-2. The coffee list (`/ca-phe`) is a left-aligned ledger: origin name set large on the left, its process/tasting note beneath it, and its price right-aligned in its own column so every price's digits line up down the page.
-3. Section eyebrow labels sit in the left margin, each naming its section in lowercase small caps-style tracking (e.g. "the roastery", "the coffee", "visit us") — never a centered "Why Choose Us" heading.
-4. Single-origin and blend cards on the coffee page show the bag/process icon only where it adds information (weight, ground-or-whole toggle) — no icon-in-a-circle feature grid anywhere on the site.
-5. The About page's photographs (roastery floor, sorting, cupping) run at two different large sizes in one alternating left/right layout, never a uniform three-card row.
-6. Hero fits one 13" screen at 1440×790 — label, headline, sub line and the two CTAs ("See our coffee" and "Wholesale enquiries") are all visible without scrolling.
-7. The wholesale/B2B contact point is its own distinct block on the Contact page (not folded into the general form) with its own heading naming it for cafés.
-8. ContactDock (call + Zalo) stays fixed bottom-right on phone widths across every page, and the Contact page's form, map and hours never sit underneath it.
+- The hero photograph (the roasting room) runs full width behind the headline, bleeding to the viewport edge on both sides — not boxed beside the text in a two-column template.
+- The coffee list (`/coffee`) is a left-aligned ledger: each coffee's name set large on the left, its process/tasting note beneath it, and its price right-aligned in its own column so every price's digits line up down the page.
+- Section eyebrow labels sit in the left margin against a left accent rule, each naming its section (e.g. "the workshop", "the coffee", "visit us") — never a centered "Why Choose Us" heading.
+- No icon-in-a-circle feature grid anywhere on the site — icons appear only inline beside a contact line or an attribute, never as a decorative grid of their own.
+- The About page's photographs (highlands sourcing, the tasting bar) run at two different large sizes in an alternating left/right layout, never a uniform three-card row.
+- The hero fits one 13" screen at 1440×790 — the eyebrow, headline, sub line and both CTAs ("See our coffee" and "Wholesale enquiries") are all visible without scrolling.
+- The wholesale enquiry is its own distinct block on the Contact page, under its own "Ordering for a café?" heading, with its own form — not folded into the general contact form.
+- ContactDock (call + Zalo) stays fixed bottom-right on phone widths across every page, and the Contact page's form, map and hours never sit underneath it.
