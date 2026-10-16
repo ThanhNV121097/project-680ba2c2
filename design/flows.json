@@ -47,11 +47,11 @@
     "steps": [
       { "action": "open", "path": "/contact" },
       { "action": "click", "selector": "[data-testid='wholesale-form-link']" },
-      { "action": "type", "selector": "#name", "value": "Quán Mây Tím" },
-      { "action": "type", "selector": "#reply_to", "value": "xinchao@quanmaytim.vn" },
-      { "action": "type", "selector": "#message", "value": "Quán chúng tôi muốn đặt sỉ 10kg cà phê hạt mỗi tháng." },
-      { "action": "click", "selector": "[data-testid='contact-submit']" },
-      { "action": "expect", "selector": "[data-testid='contact-form']", "text": "" }
+      { "action": "type", "selector": "#wholesale-name", "value": "Quán Mây Tím" },
+      { "action": "type", "selector": "#wholesale-reply_to", "value": "xinchao@quanmaytim.vn" },
+      { "action": "type", "selector": "#wholesale-message", "value": "Quán chúng tôi muốn đặt sỉ 10kg cà phê hạt mỗi tháng." },
+      { "action": "click", "selector": "[data-testid='wholesale-submit']" },
+      { "action": "expect", "selector": "[data-testid='wholesale-form']", "text": "" }
     ]
   }
 ]
