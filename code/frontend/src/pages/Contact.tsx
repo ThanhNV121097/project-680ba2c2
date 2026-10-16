@@ -44,13 +44,13 @@ export default function Contact() {
               {phone && (
                 <li className="flex items-start gap-3">
                   <Icon name="phone" className="mt-1 text-accent" />
-                  <a href={`tel:${digits(phone)}`} className="transition-colors hover:text-accent">{phone}</a>
+                  <a data-testid="contact-phone-link" href={`tel:${digits(phone)}`} className="transition-colors hover:text-accent">{phone}</a>
                 </li>
               )}
               {zalo && (
                 <li className="flex items-start gap-3">
                   <Icon name="chat" className="mt-1 text-accent" />
-                  <a href={`https://zalo.me/${digits(zalo)}`} target="_blank" rel="noreferrer" className="transition-colors hover:text-accent">Zalo: {zalo}</a>
+                  <a data-testid="contact-zalo-link" href={`https://zalo.me/${digits(zalo)}`} target="_blank" rel="noreferrer" className="transition-colors hover:text-accent">Zalo: {zalo}</a>
                 </li>
               )}
               {email && (
