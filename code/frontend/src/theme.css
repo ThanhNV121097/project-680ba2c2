@@ -57,25 +57,25 @@
    data-theme on <html> and remembers it. Set both palettes for the design. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ground: #111110;
-    --surface: #1A1A19;
-    --ink: #F2F0EC;
-    --ink-soft: #A19C95;
-    --accent: #E8664E;
-    --accent-ink: #111110;
-    --line: rgba(242, 240, 236, 0.14);
+    --ground: #17120D;
+    --surface: #221A13;
+    --ink: #F2EBE1;
+    --ink-soft: #AD9D8C;
+    --accent: #D9704F;
+    --accent-ink: #17120D;
+    --line: rgba(242, 235, 225, 0.14);
     --product-ground: #E4E4E7;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --ground: #111110;
-  --surface: #1A1A19;
-  --ink: #F2F0EC;
-  --ink-soft: #A19C95;
-  --accent: #E8664E;
-  --accent-ink: #111110;
-  --line: rgba(242, 240, 236, 0.14);
+  --ground: #17120D;
+  --surface: #221A13;
+  --ink: #F2EBE1;
+  --ink-soft: #AD9D8C;
+  --accent: #D9704F;
+  --accent-ink: #17120D;
+  --line: rgba(242, 235, 225, 0.14);
   --product-ground: #E4E4E7;
   color-scheme: dark;
 }
