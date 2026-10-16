@@ -25,6 +25,7 @@ const NAV_TESTID: Record<string, string> = {
 export default function App() {
   const links = useList<{ label: string; href: string }>("nav.links");
   const name = useContent("site.name");
+  const zalo = useContent<string>("contact.zalo");
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
 
