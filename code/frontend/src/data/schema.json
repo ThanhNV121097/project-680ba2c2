@@ -24,18 +24,9 @@
     "team": {
       "label": "Team",
       "fields": [
-        { "key": "name", "label": "Name", "type": "text" },
         { "key": "role", "label": "Role", "type": "text" },
-        { "key": "bio", "label": "Bio", "type": "longtext" },
+        { "key": "bio", "label": "What they do", "type": "longtext" },
         { "key": "image", "label": "Picture", "type": "image" }
-      ]
-    },
-    "testimonials": {
-      "label": "Testimonials",
-      "fields": [
-        { "key": "quote", "label": "Quote", "type": "longtext" },
-        { "key": "author", "label": "Author", "type": "text" },
-        { "key": "context", "label": "Context", "type": "text" }
       ]
     }
   }
