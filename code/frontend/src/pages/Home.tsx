@@ -62,9 +62,9 @@ export default function Home() {
         <Grid max={4} phone={2} className="mt-10">
           {coffees.map((c) => (
             <article key={c.id} data-record={`coffees:${c.id}`} className="flex w-full flex-col gap-3">
-              <ProductImage src={c.image || null} alt={c.name} aspect="4/5" slot={`/images/products/${c.id}.png`} />
+              <ProductImage src={c.image || null} alt={c.name} aspect="1/1" slot={`/images/products/${c.id}.png`} />
               <p className="text-xs uppercase tracking-[0.06em] text-accent">{c.kind}</p>
-              <h3 className="font-display text-xl font-[var(--weight-display)] tracking-[var(--tracking-display)] text-ink">{c.name}</h3>
+              <h3 className="font-display text-[length:var(--size-h3)] font-[var(--weight-display)] tracking-[var(--tracking-display)] text-ink">{c.name}</h3>
               <p className="text-right font-display text-ink">{formatPrice(c.priceWhole)}</p>
             </article>
           ))}

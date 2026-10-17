@@ -67,7 +67,7 @@ function Row({ c, index, reduced }: { c: CoffeeRow; index: number; reduced: bool
       className="flex flex-col gap-6 py-8 sm:flex-row sm:items-start">
       <ProductImage src={c.image || null} alt={c.name} aspect="1/1" slot={`/images/products/${c.id}.png`} className="w-full sm:w-40" />
       <div className="flex flex-1 flex-col gap-2">
-        <h3 className="font-display text-2xl font-[var(--weight-display)] tracking-[var(--tracking-display)] text-ink">{c.name}</h3>
+        <h3 className="font-display text-[length:var(--size-h3)] font-[var(--weight-display)] tracking-[var(--tracking-display)] text-ink">{c.name}</h3>
         <p className="text-sm text-ink-soft">{c.origin} · {c.process} · {c.roast} roast</p>
         <p className="max-w-[60ch] text-ink-soft">{c.note}</p>
       </div>
