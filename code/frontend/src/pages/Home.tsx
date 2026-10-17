@@ -16,7 +16,7 @@ const rise = (reduced: boolean | null, delay = 0) =>
 /** The home page: hero, a taste of the coffee list, the workshop, wholesale, and the gallery. */
 export default function Home() {
   const reduced = useReducedMotion();
-  const { items: coffees } = useCollection<{ id: string; name: string; kind: string; origin: string; note: string; priceWhole: number; image: string }>("coffees", { pageSize: 4 });
+  const { items: coffees } = useCollection<{ id: string; name: string; kind: string; origin: string; process: string; roast: string; note: string; priceWhole: number; image: string }>("coffees", { pageSize: 4 });
   const { items: shots } = useCollection<{ id: string; caption: string; image: string }>("gallery", { pageSize: 3 });
 
   return (
@@ -61,11 +61,20 @@ export default function Home() {
         </div>
         <Grid max={4} phone={2} className="mt-10">
           {coffees.map((c) => (
-            <article key={c.id} data-record={`coffees:${c.id}`} className="flex w-full flex-col gap-3">
+            <article key={c.id} data-record={`coffees:${c.id}`} className="flex w-full flex-col gap-2">
               <ProductImage src={c.image || null} alt={c.name} aspect="1/1" slot={`/images/products/${c.id}.png`} />
-              <p className="text-xs uppercase tracking-[0.06em] text-accent">{c.kind}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.06em] text-accent">{c.kind}</p>
               <h3 className="font-display text-[length:var(--size-h3)] font-[var(--weight-display)] tracking-[var(--tracking-display)] text-ink">{c.name}</h3>
-              <p className="text-right font-display text-ink">{formatPrice(c.priceWhole)}</p>
+              {/* What a card is for. The record has carried origin, process,
+                  roast and the tasting note all along; showing four of ten
+                  fields left a name floating over a price with the rest of
+                  the card empty, and read as a site with nothing in it. */}
+              <p className="text-sm text-ink-soft">{c.origin} · {c.process}</p>
+              <p className="text-sm leading-[1.55] text-ink-soft">{c.note}</p>
+              <p className="mt-auto flex items-baseline justify-between gap-3 border-t border-line pt-3 text-sm text-ink-soft">
+                <span>{c.roast}</span>
+                <span className="font-display text-[length:var(--size-h3)] text-ink">{formatPrice(c.priceWhole)}</span>
+              </p>
             </article>
           ))}
         </Grid>
@@ -105,24 +114,32 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Gallery teaser. */}
-      <motion.section {...rise(reduced)} className="border-t border-line">
-        <div className="mx-auto max-w-page px-[var(--gutter)] py-20">
-          <div className="flex flex-col items-start gap-2 border-l-2 border-accent pl-5">
+      {/* Gallery teaser — the one section after the hero that touches both
+          edges. Every other band on this page is the same 1160px column with
+          the same eyebrow, rule and heading above it, which is what made the
+          page read as one shape repeated five times. The pictures run full
+          width here and the heading sits beside them, so the eye has
+          somewhere else to go. */}
+      <motion.section {...rise(reduced)} className="border-t border-line py-20">
+        <div className="mx-auto mb-10 flex max-w-page flex-col gap-3 px-[var(--gutter)] sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col items-start gap-2">
             <T k="home.galleryEyebrow" as="p" className="text-sm font-medium uppercase tracking-[0.08em] text-ink-soft" />
             <T k="home.galleryHeading" as="h2" className="text-[length:var(--size-h2)] text-ink" />
           </div>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {shots.map((s, i) => (
-              <div key={s.id} data-record={`gallery:${s.id}`} className={`overflow-hidden rounded ${i === 0 ? "sm:col-span-2 sm:row-span-2" : ""}`}>
-                <Picture src={s.image} alt={s.caption} className="h-full w-full object-cover aspect-[4/3]" />
-              </div>
-            ))}
-          </div>
-          <Link to="/gallery" className="mt-10 inline-flex items-center gap-2 text-ink transition-colors hover:text-accent">
+          <Link to="/gallery" className="inline-flex shrink-0 items-center gap-2 text-ink transition-colors hover:text-accent">
             <T k="home.galleryCta" />
             <Icon name="arrow" size={18} />
           </Link>
+        </div>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+          {shots.map((s, i) => (
+            <figure key={s.id} data-record={`gallery:${s.id}`} className={`relative overflow-hidden ${i === 0 ? "col-span-2 sm:col-span-2" : ""}`}>
+              <Picture src={s.image} alt={s.caption} className={`h-full w-full object-cover ${i === 0 ? "aspect-[3/2]" : "aspect-[3/2]"}`} />
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-3 text-sm text-white">
+                {s.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </motion.section>
     </>
