@@ -14,7 +14,7 @@ export default function Logo({ className = "" }: { className?: string }) {
     return <img src={src} alt={name} className={`h-8 w-auto ${className}`} />;
   }
   return (
-    <span className={`inline-flex items-center gap-2 font-display text-lg tracking-tight text-ink ${className}`}>
+    <span className={`inline-flex items-center gap-2 font-display text-xl tracking-tight text-ink ${className}`}>
       <LogoMark className="h-7 w-7" />
       <span>{name}</span>
     </span>
